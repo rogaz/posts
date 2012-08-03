@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Posts</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "bootstrap" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Belleza&subset=latin,latin-ext' rel='stylesheet' type='text/css'></link>
+  <script type="text/javascript" >
+    function mostrarLinkEliminar(post){
+      elim = post.div(3);
+      elim.style.display = 'inline';
+    }
+
+    function ocultarLinkEliminar(post){
+      elim = post.div(3);
+      elim.style.display = 'none';
+    }
+
+    function cuenta(){
+      var texto = document.getElementById("area_post");
+      var label = document.getElementById("cant_caracteres");
+      label.value = 140 - texto.value.length;
+      if (label.value < 11){
+        label.style.color = "#ff0000";
+      } else{
+        label.style.color = "#808080";
+      }
+    }
+  </script>
+
 </head>
 <body>
+<%= render 'layouts/header' %>
 
-<%= yield %>
+    <%= yield %>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

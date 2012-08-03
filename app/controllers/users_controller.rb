@@ -1,3 +1,4 @@
+# coding: utf-8
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
@@ -41,10 +42,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    @user.admin = 'f'
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Bienvenido' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

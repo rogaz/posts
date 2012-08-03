@@ -1,0 +1,12 @@
+<div class="content_logout">
+<h2>Inicia Sesión</h2>
+<%= form_for(:user_session, :url => user_session_url) do |f| %>
+  <%= f.label :email %><br/>
+  <%= f.text_field :email %><br/><br/>
+  <%= f.label :password %><br/>
+  <%= f.password_field :password %><br/><br/>
+  
+  <%= f.submit "Inicia Sesión" %><br/><br/>
+  <div id="mensaje_si_logout">Registrarse <%= link_to "Crear Cuenta", signup_path %></div><br/>
+<% end %>
+</div>

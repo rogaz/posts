@@ -1,0 +1,7 @@
+<% @post = Post.new %>
+<%= form_for(@post) do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  <%= f.text_area :estado, :placeholder => "Escribe tu estado...", :id => "area_post", :onkeydown => "cuenta()", :onload => "cuenta()", :onkeyup => "cuenta()" %><br/><br/>
+  <%= f.submit "Postear" %>
+  <input readonly id="cant_caracteres" />
+<% end %>
