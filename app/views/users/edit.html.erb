@@ -1,6 +1,17 @@
-<h1>Editing user</h1>
+<div class="der">
+<h1>Edita tu cuenta</h1>
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %><br/><br/>
+  <%= f.label :email %><br/>
+  <%= f.text_field :email %><br/><br/>
+  <%= f.label :password %><br/>
+  <%= f.password_field :password %><br/><br/>
+  <%= f.label :password_confirmation %><br/>
+  <%= f.password_field :password_confirmation %><br/><br/>
+  <%= f.file_field :avatar %><br/><br/>
+  <%= f.submit "Guardar cambios" %>
+<% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+</div>
