@@ -1,5 +1,5 @@
 Posts::Application.routes.draw do
-  root :to => "Users#index"
+  root :to => "user_sessions#new"
 
   resources :users
   resource  :user_session, :only => [:new, :create, :destroy]
