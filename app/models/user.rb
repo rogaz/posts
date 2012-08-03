@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts, :dependent => :destroy
-  attr_accessible :email, :name, :password, :password_confirmation, :admin
-
+  attr_accessible :name, :email, :password, :password_confirmation, :avatar, :admin
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "80x80>" }, :default_url => 'default.jpg'
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save {self.email.downcase!}

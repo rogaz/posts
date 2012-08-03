@@ -11,7 +11,7 @@
 
 
       <div class="desc_post">
-        
+        <%= image_tag post.user.avatar.url(:thumb) %>
         <div class="nombre_index"><%= link_to post.user.name, user_posts_path(post.user.id) %></div>
         <%= link_to post.estado, post_path(post), :class => :estado_index %>
       </div>

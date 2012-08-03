@@ -130,6 +130,12 @@ textarea{
     border-radius: 20px;
 }
 
+.der img{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
 .content_logout{
     width: 600px;
     margin: 0 auto;
@@ -183,6 +189,7 @@ textarea{
 
 .nombre_index a{
     color: #000;
+    font-size: 1.3em;
 }
 
 .nombre_index a:hover{

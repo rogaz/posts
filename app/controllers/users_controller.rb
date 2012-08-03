@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index, :show, :edit, :update]
 
   helper_method :admon_user
+  
   # GET /users
   # GET /users.json
   def index
@@ -79,6 +80,14 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    if admon_user
+      flash[:notice] = 'La cuenta ha sido eliminada'
+      redirect_to users_path
+    else
+      flash[:notice] = 'Su cuenta ha sido eliminada'
+      redirect_to signup_path
+      current_user_session.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to users_url }

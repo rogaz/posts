@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803040809) do
+ActiveRecord::Schema.define(:version => 20120803162215) do
 
   create_table "posts", :force => true do |t|
     t.string   "estado",     :null => false
@@ -35,6 +35,10 @@ ActiveRecord::Schema.define(:version => 20120803040809) do
     t.string   "admin"
     t.string   "persistence_token"
     t.string   "crypted_password"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.string   "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

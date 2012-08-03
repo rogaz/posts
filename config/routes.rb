@@ -2,7 +2,7 @@ Posts::Application.routes.draw do
   root :to => "Posts#index"
 
   resources :users
-  resources :posts
+  resources :posts, :only => [:index, :new, :create, :show, :destroy]
   resource  :user_session, :only => [:new, :create, :destroy]
 
   delete "logout" => "user_sessions#destroy", :as => :logout
