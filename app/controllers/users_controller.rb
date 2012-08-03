@@ -1,6 +1,8 @@
 # coding: utf-8
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index, :show, :edit, :update]
+
+  helper_method :admon_user
   # GET /users
   # GET /users.json
   def index
@@ -81,6 +83,14 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
+    end
+  end
+
+  def admon_user
+    if current_user.admin == "t"
+      true
+    else
+      false
     end
   end
 end

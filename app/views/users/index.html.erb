@@ -2,15 +2,15 @@
 <table>
 <% @users.each do |user| %>
   <tr>
-    <td></td><td><%= user.name %></td>
+    <td><%=  %></td><td><%= link_to user.name, user_posts_path(user.id) %></td>
     <td><%= user.email %></td>
-      
+      <% if admon_user %>
         <td>
-      
+          <% if user != current_user  %>
             <%= link_to "Eliminar Usuario", user_path(user), :method => "delete", :confirm => "¿Realmente deseas eliminar este usuario?" %>
-      
+          <% end %>
         </td>
-      
+      <% end %>
   </tr>
 <% end %>
 </table>
