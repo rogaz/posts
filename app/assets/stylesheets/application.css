@@ -26,7 +26,7 @@ td{
 }
 
 textarea{
-    width: 270px;
+    width: 320px;
     height: 80px;
     resize: none;
 }
@@ -122,7 +122,7 @@ textarea{
 
 .der{
     height: auto;
-    width: 550px;
+    width: 600px;
     float: right;
     margin: 50px 80px 0 0;
     background: #FFF;
@@ -230,9 +230,9 @@ textarea{
 }
 
 #nombre_content{
-    width: 300px;
+    width: 350px;
     padding: 20px;
-    margin: 50px 50px 0 100px;
+    margin: 50px 50px 0 80px;
     font-size: 2em;
     background-color: #a8e1f2;
     border: 2px solid #46c5ea;
@@ -248,10 +248,10 @@ textarea{
 }
 
 #crear_post{
-    width: 300px;
+    width: 350px;
     padding: 20px;
     float: left;
-    margin: 30px 0 0 100px;
+    margin: 30px 0 0 80px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -261,9 +261,10 @@ textarea{
 }
 
 #nombre{
-    width: 150px;
+    width: 250px;
     float: right;
     text-align: left;
+    font-size: .9em;
 }
 
 .boton_eliminar{

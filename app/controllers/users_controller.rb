@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @user.admin = 'f'
+    @user.admin = 't'
 
     respond_to do |format|
       if @user.save
@@ -79,7 +79,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    
     if admon_user
       flash[:notice] = 'La cuenta ha sido eliminada'
       redirect_to users_path
@@ -89,10 +89,7 @@ class UsersController < ApplicationController
       current_user_session.destroy
     end
 
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
+    @user.destroy
   end
 
   def admon_user
