@@ -6,16 +6,29 @@
   <%= stylesheet_link_tag    "bootstrap" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="icon" type="image/jpg" href="ico.jpg" />
   <link href='http://fonts.googleapis.com/css?family=Belleza&subset=latin,latin-ext' rel='stylesheet' type='text/css'></link>
   <script type="text/javascript" >
-    function mostrarLinkEliminar(post){
-      elim = post.div(3);
-      elim.style.display = 'inline';
+    function ocultar(){
+      obj = document.getElementsByName("eliminarpost");
+      for (x = 0; x < obj.length; x++){
+        obj[x].style.display = "none";
+      }
+      
     }
 
-    function ocultarLinkEliminar(post){
-      elim = post.div(3);
-      elim.style.display = 'none';
+    function mostrarLinkEliminar(id){
+      numero = id.substring(4);
+      divocultar = "elim" + numero;
+      div = document.getElementById(divocultar);
+      div.style.display = 'inline';
+    }
+
+    function ocultarLinkEliminar(id){
+      numero = id.substring(4);
+      divocultar = "elim" + numero;
+      div = document.getElementById(divocultar);
+      div.style.display = 'none';
     }
 
     function cuenta(){
@@ -31,7 +44,7 @@
   </script>
 
 </head>
-<body>
+<body onload="ocultar();">
 <%= render 'layouts/header' %>
 
     <%= yield %>

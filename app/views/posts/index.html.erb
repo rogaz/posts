@@ -7,8 +7,15 @@
   <h2 style="margin-left: 30px;"><%= @posts_de %></h2>
   <% numero_de_post = 0 %>
   <% @posts.each do |post| %>
-    <div class="post" onmouseover="mostrarLinkEliminar(this);" onmouseout="ocultarLinkEliminar(this);">
-
+    <% if current_user.admin == "t" %>
+      <% numero_de_post += 1 %>
+      <div class="post" id="<%= "post" + numero_de_post.to_s%>" onmouseover="mostrarLinkEliminar(this.id);" onmouseout="ocultarLinkEliminar(this.id);">
+    <% elsif post.user == current_user %>
+      <% numero_de_post += 1 %>
+      <div class="post" id="<%= "post" + numero_de_post.to_s%>" onmouseover="mostrarLinkEliminar(this.id);" onmouseout="ocultarLinkEliminar(this.id);">
+    <% else %>
+      <div class="post">
+    <% end %>
 
       <div class="desc_post">
         <%= image_tag post.user.avatar.url(:thumb) %>
@@ -19,13 +26,15 @@
 
 
       <% if current_user.admin == "t" %>
-        <% numero_de_post += 1 %>
-        <div id="<%= "elim"+numero_de_post.to_s %>" class="eliminar_index" ><%= link_to "Eliminar Post", post_path(post.id), :method => "delete", :confirm => "¿Desea eliminar post?" %></div>
+        <div id="<%= "elim"+numero_de_post.to_s %>" name="eliminarpost" class="eliminar_index" ><%= link_to "Eliminar Post", post_path(post.id), :method => "delete", :confirm => "¿Desea eliminar post?" %></div>
+        </div>
       <% elsif post.user == current_user %>
-        <% numero_de_post += 1 %>
-        <div id="<%= "elim"+numero_de_post.to_s %>" class="eliminar_index" ><%= link_to "Eliminar Post", post_path(post.id), :method => "delete", :confirm => "¿Desea eliminar post?" %></div>
+        <div id="<%= "elim"+numero_de_post.to_s %>" name="eliminarpost" class="eliminar_index" ><%= link_to "Eliminar Post", post_path(post.id), :method => "delete", :confirm => "¿Desea eliminar post?" %></div>
+        </div>
+      <% else %>
+        </div>
       <% end %>
-    </div>
+    
     
 
   <% end %>
