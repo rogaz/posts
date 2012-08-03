@@ -1,4 +1,7 @@
+# coding: utf-8
 class UserSessionsController < ApplicationController
+
+  before_filter :authenticate, :only => [:destroy]
 
   def new
     @user_session = UserSession.new
@@ -9,7 +12,7 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_to root_path
     else
-      
+      flash[:notice] = 'El correo y contraseña no coinciden'
       render :action => :new
     end
   end

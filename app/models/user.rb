@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :posts, :dependent => :destroy
   attr_accessible :email, :name, :password, :password_confirmation, :admin
 
+  
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save {self.email.downcase!}
 
@@ -14,5 +16,4 @@ class User < ActiveRecord::Base
   acts_as_authentic do |config|
     config.crypto_provider = Authlogic::CryptoProviders::MD5
   end
-
 end

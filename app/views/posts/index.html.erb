@@ -1,0 +1,34 @@
+<% @desc_tit = "Inicio" %>
+<% if @posts.empty? %>
+  <% flash[:notice] = "No existen post por el momento" %>
+<% else %>
+<div class="der" style="padding: 50px 0 20px 0;">
+  <div id="posts_content">
+  <h2 style="margin-left: 30px;"><%= @posts_de %></h2>
+  <% numero_de_post = 0 %>
+  <% @posts.each do |post| %>
+    <div class="post" onmouseover="mostrarLinkEliminar(this);" onmouseout="ocultarLinkEliminar(this);">
+
+
+      <div class="desc_post">
+        
+        <div class="nombre_index"><%= link_to post.user.name, user_posts_path(post.user.id) %></div>
+        <%= link_to post.estado, post_path(post), :class => :estado_index %>
+      </div>
+      <div class="tiempo_atras"><%= time_ago_in_words(post.created_at) %> ago</div>
+
+
+      <% if current_user.admin == "t" %>
+        <% numero_de_post += 1 %>
+        <div id="<%= "elim"+numero_de_post.to_s %>" class="eliminar_index" ><%= link_to "Eliminar Post", post_path(post.id), :method => "delete", :confirm => "¿Desea eliminar post?" %></div>
+      <% elsif post.user == current_user %>
+        <% numero_de_post += 1 %>
+        <div id="<%= "elim"+numero_de_post.to_s %>" class="eliminar_index" ><%= link_to "Eliminar Post", post_path(post.id), :method => "delete", :confirm => "¿Desea eliminar post?" %></div>
+      <% end %>
+    </div>
+    
+
+  <% end %>
+  </div>
+</div>
+<% end %>

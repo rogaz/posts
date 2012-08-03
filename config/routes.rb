@@ -1,7 +1,8 @@
 Posts::Application.routes.draw do
-  root :to => "user_sessions#new"
+  root :to => "Posts#index"
 
   resources :users
+  resources :posts
   resource  :user_session, :only => [:new, :create, :destroy]
 
   delete "logout" => "user_sessions#destroy", :as => :logout
@@ -9,6 +10,7 @@ Posts::Application.routes.draw do
 
   match "sign_in" => "User_sessions#new", :as => "signin"
   match "sign_up" => "Users#new", :as => "signup"
+  match "posts/persona/:id" => "Posts#index", :as => "user_posts"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
