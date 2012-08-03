@@ -1,5 +1,6 @@
 <% @desc_tit = "Detalles de Usuario" %>
 <div class="der">
+  <div style="padding: 0 20px;">
 <table>
   <tr>
     <th>ID</th>
@@ -8,11 +9,19 @@
     <th>Creado</th>
 
   </tr>
+  <% dia = @user.created_at.day %>
+  <% dia = dia.to_s %>
+  <% meses = "Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre".split(" ") %>
+  <% mes = meses[@user.created_at.month-1] %>
+  <% mes = mes.to_s %>
+  <% anio = @user.created_at.year %>
+  <% anio = anio.to_s %>
   <tr>
     <td><%= @user.id %></td>
     <td><%= @user.name %></td>
     <td><%= @user.email %></td>
-    <td><%= @user.created_at %></td>
+    <td><%= dia + " de " + mes + " de " + anio %></td>
   </tr>
 </table>
+  </div>
 </div>

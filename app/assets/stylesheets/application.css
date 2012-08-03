@@ -48,7 +48,7 @@ textarea{
     -moz-border-radius-bottomleft: 20px;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
-
+    
 }
 
 #header a{
@@ -61,10 +61,12 @@ textarea{
     padding: 10px;
     margin: 0 20px;
     font-weight: bold;
+    text-shadow: 1px 1px 1px #000000;
+    filter: dropshadow(color=#000000, offx=1, offy=1);
 }
 
 #header a:hover{
-    color: #EEE;
+    color: #FFF;
     background: #22a7f7; /* Old browsers */
     background: -moz-linear-gradient(top, #22a7f7 0%, #83ccff 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#22a7f7), color-stop(100%,#83ccff)); /* Chrome,Safari4+ */
@@ -73,6 +75,8 @@ textarea{
     background: -ms-linear-gradient(top, #22a7f7 0%,#83ccff 100%); /* IE10+ */
     background: linear-gradient(top, #22a7f7 0%,#83ccff 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#22a7f7', endColorstr='#83ccff',GradientType=0 ); /* IE6-9 */
+    text-shadow: 2px 2px 5px #000000;
+    filter: dropshadow(color=#000000, offx=2, offy=2);
 }
 
 #content{
@@ -122,7 +126,7 @@ textarea{
     float: right;
     margin: 50px 80px 0 0;
     background: #FFF;
-    padding: 50px;
+    padding: 50px 0 20px 0;
     opacity:0.95;
     filter:alpha(opacity=95); /* For IE8 and earlier */
     -webkit-border-radius: 20px;
