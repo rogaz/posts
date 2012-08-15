@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    @user.admin = 'f'
+    @user.admin = 't'
 
     respond_to do |format|
       if @user.save
