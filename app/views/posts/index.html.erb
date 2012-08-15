@@ -2,7 +2,7 @@
 <% if @posts.empty? %>
   <% flash[:notice] = "No existen post por el momento" %>
 <% else %>
-<div class="der" style="padding: 50px 0 20px 0;">
+<div class="der" style="padding: 20px 0;">
   <div id="posts_content">
   <h2 style="margin-left: 30px;"><%= @posts_de %></h2>
   <% numero_de_post = 0 %>
@@ -18,9 +18,9 @@
     <% end %>
 
       <div class="desc_post">
-        <%= image_tag post.user.avatar.url(:thumb, :height => "80", :width => "80") %>
+        <%= link_to image_tag(post.user.avatar.url(:thumb), :size => "80X80"), user_posts_path(post.user.id) %>
         <div class="nombre_index"><%= link_to post.user.name, user_posts_path(post.user.id) %></div>
-        <%= link_to post.estado, post_path(post), :class => :estado_index %>
+        <div class="estado_index" style="white-space: normal;"><div><%= link_to post.estado, post_path(post), :style => "color: #444;"%></div></div>
       </div>
       <div class="tiempo_atras"><%= time_ago_in_words(post.created_at) %> ago</div>
 

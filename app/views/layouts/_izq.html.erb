@@ -1,0 +1,11 @@
+<% if current_user_session %>
+  <div id="izq">
+    <div id="nombre_content">
+      <div id="nombre"><%= current_user.name %></div>
+      <%= image_tag current_user.avatar.url(:thumb) %>
+    </div>
+    <div id="crear_post">
+      <%= render 'shared/post_form' %>
+    </div>
+  </div>
+<% end %>

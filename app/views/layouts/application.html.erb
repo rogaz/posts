@@ -46,9 +46,10 @@
 </head>
 <body onload="ocultar();">
 <%= render 'layouts/header' %>
-
+  <div id="content">
+<%= render 'layouts/izq' %>
     <%= yield %>
-
+  </div>
 <%= render 'layouts/footer' %>
 
 </body>

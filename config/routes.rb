@@ -2,11 +2,16 @@ Posts::Application.routes.draw do
   root :to => "Posts#index"
 
   resources :users
+  get "users/:id/edit_password" => "users#edit_password", :as => :edit_user_password
+  post "users/:id/update_password" => "users#update_password", :as => :update_user_password
+  get "users/:id/edit_image" => "users#edit_image", :as => :edit_user_image
+  post "users/:id/update_image" => "users#update_image", :as => :update_user_image
+
   resources :posts, :only => [:index, :new, :create, :show, :destroy]
   resource  :user_session, :only => [:new, :create, :destroy]
 
   delete "logout" => "user_sessions#destroy", :as => :logout
-  
+
 
   match "sign_in" => "User_sessions#new", :as => "signin"
   match "sign_up" => "Users#new", :as => "signup"

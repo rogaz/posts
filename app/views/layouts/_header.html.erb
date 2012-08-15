@@ -1,7 +1,7 @@
   <% if current_user_session %>
     <div id="header">
     <%= link_to "Logout", logout_path, :method => "delete" %>
-    <%= link_to "Editar Cuenta", edit_user_path(current_user) %>
+    <%= link_to "Editar Cuenta", edit_user_password_path(current_user) %>
     <%= link_to "Detalles de usuario", user_path(current_user) %>
     <%= link_to "Usuarios", users_path %>
     <%= link_to "Inicio", root_path %>
@@ -9,15 +9,6 @@
     <% flash.each do |key, value| %>
       <div id="flash" class="<%= key %>"><%= value %></div>
     <% end %>
-    <div id="izq">
-      <div id="nombre_content">
-        <div id="nombre"><%= current_user.name %></div>
-        <%= image_tag current_user.avatar.url(:thumb) %>
-      </div>
-      <div id="crear_post">
-        <%= render 'shared/post_form' %>
-      </div>
-    </div>
   <% else %>
     <div id="header">
     <%= link_to "Login", signin_path %>

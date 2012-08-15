@@ -19,8 +19,7 @@ li{
 }
 
 td{
-    min-width: 100px;
-    max-width: 150px;
+    max-width: 180px;
     overflow: hidden;
     text-align: center;
 }
@@ -80,8 +79,68 @@ textarea{
 }
 
 #content{
-    width: 100%;
+    width: 900px;
     height: auto;
+    margin: 0 auto;
+    background: #FFF;
+    /*opacity:0.5;
+    filter:alpha(opacity=50);*/ /* For IE8 and earlier */
+}
+
+#izq{
+    float: left;
+    width: 300px;
+}
+
+.der{
+    height: auto;
+    width: 500px;
+    float: right;
+    margin: 50px 0 0 0;
+    background: #FFF;
+    padding: 50px 0 20px 0;
+    opacity:0.95;
+    filter:alpha(opacity=95); /* For IE8 and earlier */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.der img{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#nombre_content{
+    width: 350px;
+    padding: 20px;
+    margin: 50px 0 0 0;
+    font-size: 2em;
+    background-color: #a8e1f2;
+    border: 2px solid #46c5ea;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    opacity:0.9;
+    filter:alpha(opacity=90); /* For IE8 and earlier */
+    z-index: 0;
+    color: #333;
+    text-align: center;
+    float: left;
+}
+
+#crear_post{
+    width: 350px;
+    padding: 20px;
+    float: left;
+    margin: 30px 0 0 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    opacity:0.95;
+    filter:alpha(opacity=95); /* For IE8 and earlier */
+    background-color: #FFF;
 }
 
 #footer{
@@ -118,26 +177,6 @@ textarea{
     border: 4px solid #ea290a;
     background: #fe6047;
     color: #cd1401;
-}
-
-.der{
-    height: auto;
-    width: 600px;
-    float: right;
-    margin: 50px 80px 0 0;
-    background: #FFF;
-    padding: 50px 0 20px 0;
-    opacity:0.95;
-    filter:alpha(opacity=95); /* For IE8 and earlier */
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-}
-
-.der img{
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
 }
 
 .content_logout{
@@ -201,10 +240,13 @@ textarea{
 }
 
 .estado_index{
-    width: 400px;
+    width: 300px;
+    height: auto;
     float: left;
     padding: 10px;
     color: #444;
+    white-space: normal;
+    overflow: hidden;
 }
 
 .estado_index:hover{
@@ -222,42 +264,6 @@ textarea{
     color: #666;
     font-size: .85em;
     margin-left: 100px;
-}
-
-#izq{
-    float: left;
-    width: 500px;
-}
-
-#nombre_content{
-    width: 350px;
-    padding: 20px;
-    margin: 50px 50px 0 80px;
-    font-size: 2em;
-    background-color: #a8e1f2;
-    border: 2px solid #46c5ea;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    opacity:0.9;
-    filter:alpha(opacity=90); /* For IE8 and earlier */
-    z-index: 0;
-    color: #333;
-    text-align: center;
-    float: left;
-}
-
-#crear_post{
-    width: 350px;
-    padding: 20px;
-    float: left;
-    margin: 30px 0 0 80px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    opacity:0.95;
-    filter:alpha(opacity=95); /* For IE8 and earlier */
-    background-color: #FFF;
 }
 
 #nombre{

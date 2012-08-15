@@ -1,0 +1,11 @@
+<% @desc_tit = "Modifica tu Avatar" %>
+<div class="der">
+<h1 style="margin-left: 40px;">Modifica tu Avatar</h1>
+<%= link_to "Modifica tu Password", edit_user_password_path(@user), :style => "margin-left: 40px" %>
+<%= form_for @user, :url => :update_user_image, :method => "post" do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= f.label :avatar %><br/>
+  <%= f.file_field :avatar %><br/><br/>
+  <%= f.submit "Guardar cambios" %>
+<% end %>
+</div>
