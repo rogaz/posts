@@ -19,7 +19,7 @@ li{
 }
 
 td{
-    max-width: 180px;
+    max-width: 130px;
     overflow: hidden;
     text-align: center;
 }
@@ -83,6 +83,9 @@ textarea{
     height: auto;
     margin: 0 auto;
     background: #FFF;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
     /*opacity:0.5;
     filter:alpha(opacity=50);*/ /* For IE8 and earlier */
 }

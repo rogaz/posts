@@ -4,7 +4,8 @@
 <table>
 <% @users.each do |user| %>
   <tr>
-    <td><%= image_tag user.avatar.url(:thumb) %></td><td><%= link_to user.name, user_posts_path(user.id) %></td>
+    <td><%= image_tag user.avatar.url(:thumb) %></td>
+    <td><%= link_to user.name, user_posts_path(user.id) %></td>
     <td><%= user.email %></td>
       <% if admon_user %>
         <td>
