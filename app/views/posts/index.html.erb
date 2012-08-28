@@ -20,7 +20,7 @@
       <div class="desc_post">
         <%= link_to image_tag(post.user.avatar.url(:thumb), :size => "80X80"), user_posts_path(post.user.id) %>
         <div class="nombre_index"><%= link_to post.user.name, user_posts_path(post.user.id) %></div>
-        <div class="estado_index" style="white-space: normal;"><div><%= link_to post.estado, post_path(post), :style => "color: #444;"%></div></div>
+        <div class="estado_index"><div><%= link_to post.estado, post_path(post), :style => "color: #444;"%></div></div>
       </div>
       <div class="tiempo_atras"><%= time_ago_in_words(post.created_at) %> ago</div>
 

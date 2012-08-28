@@ -6,7 +6,8 @@
   <%= stylesheet_link_tag    "bootstrap" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="icon" type="image/jpg" href="ico.jpg" />
+  <%= favicon_link_tag 'favicon.ico', :rel => 'apple-touch-icon', :type => 'image/ico' %>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/ico" />
   <link href='http://fonts.googleapis.com/css?family=Belleza&subset=latin,latin-ext' rel='stylesheet' type='text/css'></link>
   <script type="text/javascript" >
     function ocultar(){
