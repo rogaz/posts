@@ -9,8 +9,8 @@ development:
   encoding: UTF-8
   database: posts
   pool: 5
-  username: posts
-  password: posts
+  username: prueba
+  password: prueba
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
