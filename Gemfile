@@ -8,7 +8,7 @@ gem 'rails', '3.2.3'
 gem 'pg'
 gem 'authlogic'
 gem "paperclip", "~> 2.4"
-
+gem "rails_best_practices"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
